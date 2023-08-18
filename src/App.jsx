@@ -76,9 +76,16 @@ function App() {
         { 
             todos.map((todos, i) => (
               <li className="mt-2" key={i}>  
-              <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-              <label htmlFor="default-checkbox" className="ml-2 text-sm  text-gray-900 dark:text-gray-300">
-              { todos.title }</label>
+              <div className="flex flex-row ">
+              <div className="w-full h-8">
+                <input id="default-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                <label htmlFor="default-checkbox" className="ml-2 text-sm  text-gray-900 dark:text-gray-300">
+                { todos.title }</label>
+                </div>
+                <div className="w-1/10  h-8">
+                <buton className="flex justify-end cursor-pointer text-red-500" onClick={ () => alert('a')} >X</buton>
+                </div>
+              </div>
               </li>
         ))}
         </ul>
