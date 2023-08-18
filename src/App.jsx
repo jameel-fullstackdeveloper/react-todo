@@ -46,6 +46,10 @@ function App() {
     setInputtodo(event.target.value);
   }
 
+  const handleDelete = (id) => {
+    Settodos([...todos].filter(todo => todo.id !== id) )
+  }
+
 
 
   return (
@@ -83,7 +87,8 @@ function App() {
                 { todos.title }</label>
                 </div>
                 <div className="w-1/10  h-8">
-                <buton className="flex justify-end cursor-pointer text-red-500" onClick={ () => alert('a')} >X</buton>
+                <button className="flex justify-end cursor-pointer text-red-500" 
+                onClick={ () => handleDelete(todos.id)} >X</button>
                 </div>
               </div>
               </li>
